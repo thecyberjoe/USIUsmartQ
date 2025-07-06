@@ -1,0 +1,19 @@
+# VS Code settings
+.vscode/
+
+# macOS / Windows system files
+.DS_Store
+Thumbs.db
+
+# node or Python envs (in case)
+node_modules/
+venv/
+dist/
+*.log
+
+# Ignore node modules, system files
+node_modules/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log

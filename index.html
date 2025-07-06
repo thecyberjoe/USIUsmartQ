@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queueless</title>
+    <link rel="icon" type="image/png" href="icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container"><h1>Queueless</h1></div>
+      <nav>
+        <a href="#" class="active" aria-label="Home">Home</a>
+        <a href="#" aria-label="My Queues">My Queues</a>
+        <a href="#" aria-label="Logout">Logout</a>
+        <button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-text">
+          <h2>Skip the line,<br />not the service.</h2>
+          <div class="btn-group">
+            <a href="login.html" class="btn btn-primary btn-glow"
+              >Log&nbsp;in</a
+            >
+            <a href="signup.html" class="btn btn-outline btn-glow"
+              >Sign&nbsp;Up</a
+            >
+          </div>
+        </div>
+        <div class="hero-img">
+          <img src="hero.png" alt="Students joining a virtual queue" />
+        </div>
+      </section>
+
+      <!-- DASHBOARD -->
+      <section class="dashboard" id="services"></section>
+
+      <!-- STATUS -->
+      <section class="status-section">
+        <h3>Queue Status</h3>
+        <div>Your Position:</div>
+        <div class="status" id="position">-</div>
+        <div>Estimated wait time: <span id="wait">-</span></div>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 Queueless. All rights reserved.</footer>
+
+    <!-- Toast Notification -->
+    <div id="toast"></div>
+
+    <script src="app.js"></script>
+    <script src="theme.js"></script>
+  </body>
+</html>
