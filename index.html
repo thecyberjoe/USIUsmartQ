@@ -23,7 +23,18 @@
   <input type="password" id="loginPassword" placeholder="Password" required />
   <button type="submit">Login</button>
 </form>
+<form onsubmit="handleLogin(event)">
+  <input type="email" placeholder="Email" required>
+  <input type="password" placeholder="Password" required>
+  <button type="submit">Login</button>
+</form>
 
+<script>
+  function handleLogin(event) {
+    event.preventDefault();
+    alert("Login button clicked!");
+  }
+</script>
 <script src="auth.js"></script> <!-- Link to our login logic -->
       <!-- Signup Form -->
       <form id="signupForm">

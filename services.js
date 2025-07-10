@@ -1,3 +1,8 @@
+if (sessionStorage.getItem('loggedIn') !== 'true') {
+  // Not logged in? Redirect to login
+  alert("Please log in first!");
+  window.location.href = "index.html";
+}
 const queues = {
   accounts: [],
   library: [],
@@ -35,6 +40,11 @@ function cancelQueue(service) {
     alert("You are not in this queue.");
   }
 }
+function logout() {
+  sessionStorage.removeItem('loggedIn');
+  window.location.href = "index.html";
+}
+
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
