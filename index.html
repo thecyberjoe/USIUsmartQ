@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="images/favicon.ico">
   <title>USIU smartQ</title>
-  
 </head>
 <body>
   <div class="overlay"></div>
@@ -18,24 +17,12 @@
     </div>
     <div class="form-container">
       <!-- Login Form -->
-  <form onsubmit="loginUser(event)">
-  <input type="email" id="loginEmail" placeholder="Email" required />
-  <input type="password" id="loginPassword" placeholder="Password" required />
-  <button type="submit">Login</button>
-</form>
-<form onsubmit="handleLogin(event)">
-  <input type="email" placeholder="Email" required>
-  <input type="password" placeholder="Password" required>
-  <button type="submit">Login</button>
-</form>
+      <form id="loginForm" onsubmit="loginUser(event)">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
 
-<script>
-  function handleLogin(event) {
-    event.preventDefault();
-    alert("Login button clicked!");
-  }
-</script>
-<script src="auth.js"></script> <!-- Link to our login logic -->
       <!-- Signup Form -->
       <form id="signupForm">
         <input type="text" id="signupName" placeholder="Full Name" required />
@@ -47,6 +34,7 @@
     </div>
   </div>
 
+  <script src="auth.js"></script>
   <script>
     function showLogin() {
       document.getElementById("signupForm").style.display = "none";
@@ -58,26 +46,12 @@
       document.getElementById("signupForm").style.display = "block";
     }
 
-    function handleLogin() {
-      const email = document.getElementById("loginEmail").value;
-      const password = document.getElementById("loginPassword").value;
-
-      // Placeholder logic for now
-      if (email && password) {
-        alert("Login successful! Redirecting to services...");
-        window.location.href = "services.html"; // Load services page
-      } else {
-        alert("Please enter both fields");
-      }
-    }
-
     function handleSignup() {
       const name = document.getElementById("signupName").value;
       const contact = document.getElementById("signupContact").value;
       const email = document.getElementById("signupEmail").value;
       const password = document.getElementById("signupPassword").value;
 
-      // Placeholder logic for now
       if (name && contact && email && password) {
         alert("Signup successful! Please log in.");
         showLogin();
@@ -86,5 +60,35 @@
       }
     }
   </script>
+  <script>
+  function showLogin() {
+    document.getElementById("signupForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+  }
+
+  function showSignup() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("signupForm").style.display = "block";
+  }
+
+  function handleSignup() {
+    const name = document.getElementById("signupName").value;
+    const contact = document.getElementById("signupContact").value;
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+
+    if (name && contact && email && password) {
+      alert("Signup successful! Please log in.");
+      showLogin();
+    } else {
+      alert("Fill all fields");
+    }
+  }
+
+  // ✅ Add this to show login form on page load:
+  window.onload = function () {
+    showLogin();
+  };
+</script>
 </body>
 </html>
