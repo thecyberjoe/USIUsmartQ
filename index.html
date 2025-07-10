@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/favicon.ico">
   <title>USIU smartQ</title>
   
 </head>
@@ -17,12 +18,13 @@
     </div>
     <div class="form-container">
       <!-- Login Form -->
-      <form id="loginForm">
-        <input type="email" id="loginEmail" placeholder="Email Address" required />
-        <input type="password" id="loginPassword" placeholder="Password" required />
-        <button class="btn" type="button" onclick="handleLogin()">Login</button>
-      </form>
+  <form onsubmit="loginUser(event)">
+  <input type="email" id="loginEmail" placeholder="Email" required />
+  <input type="password" id="loginPassword" placeholder="Password" required />
+  <button type="submit">Login</button>
+</form>
 
+<script src="auth.js"></script> <!-- Link to our login logic -->
       <!-- Signup Form -->
       <form id="signupForm">
         <input type="text" id="signupName" placeholder="Full Name" required />
