@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | Queueless</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>USIUsmartQ - Services</title>
+  <link rel="stylesheet" href="services.css">
 </head>
-<body class="auth-page">
-  <a href="index.html" class="back-home"><strong>← Back to Home</strong></a>
-  <main class="auth-container">
-    <div class="auth-box">
-      <h2>Welcome back</h2>
-      <form id="loginForm">
-        <input type="email"     placeholder="Email"    required />
-        <input type="password"  placeholder="Password" required />
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
-      </form>
-      <p class="auth-link">Don’t have an account? <a href="signup.html">Sign up</a></p>
+<body>
+  <header class="navbar">
+    <h1 class="logo">USIUsmartQ</h1>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <main class="services-container">
+    <div class="service-card" data-service="Accounts Office">
+      <img src="img/accounts.jpg" alt="Accounts Office">
+      <div class="overlay">
+        <h2>Accounts Office</h2>
+        <p class="queue-status" id="accounts-status">Not in queue</p>
+        <button onclick="joinQueue('accounts')">Join Queue</button>
+        <button onclick="cancelQueue('accounts')">Cancel Queue</button>
+      </div>
+    </div>
+
+    <div class="service-card" data-service="Library">
+      <img src="img/library.jpg" alt="Library">
+      <div class="overlay">
+        <h2>Library</h2>
+        <p class="queue-status" id="library-status">Not in queue</p>
+        <button onclick="joinQueue('library')">Join Queue</button>
+        <button onclick="cancelQueue('library')">Cancel Queue</button>
+      </div>
+    </div>
+
+    <div class="service-card" data-service="Registrar's Office">
+      <img src="img/registrar.jpg" alt="Registrar's Office">
+      <div class="overlay">
+        <h2>Registrar's Office</h2>
+        <p class="queue-status" id="registrar-status">Not in queue</p>
+        <button onclick="joinQueue('registrar')">Join Queue</button>
+        <button onclick="cancelQueue('registrar')">Cancel Queue</button>
+      </div>
+    </div>
+
+    <div class="service-card" data-service="Course Advisor">
+      <img src="img/advisor.jpg" alt="Course Advisor">
+      <div class="overlay">
+        <h2>Course Advisor</h2>
+        <p class="queue-status" id="advisor-status">Not in queue</p>
+        <button onclick="joinQueue('advisor')">Join Queue</button>
+        <button onclick="cancelQueue('advisor')">Cancel Queue</button>
+      </div>
     </div>
   </main>
-  <script src="validate.js"></script>
+
+  <script src="services.js"></script>
 </body>
-</html
+</html>
