@@ -40,10 +40,7 @@ function cancelQueue(service) {
     alert("You are not in this queue.");
   }
 }
-function logout() {
-  sessionStorage.removeItem('loggedIn');
-  window.location.href = "index.html";
-}
+
 
 
 function capitalize(str) {
